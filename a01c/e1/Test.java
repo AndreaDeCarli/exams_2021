@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
+//import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -50,7 +50,7 @@ public class Test {
 	
 	@org.junit.Before
 	public void initFactory() {
-//		this.factory = new EventHistoryFactoryImpl();
+		this.factory = new EventHistoryFactoryImpl();
 	}
 	
 	@org.junit.Test

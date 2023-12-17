@@ -70,6 +70,7 @@ public class GUI extends JFrame {
             }
             jb.setEnabled(false);
         }
+        
     }
     
 }
