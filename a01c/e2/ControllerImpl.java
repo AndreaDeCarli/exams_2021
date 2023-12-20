@@ -3,25 +3,24 @@ package a01c.e2;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.BiFunction;
-import java.util.function.Predicate;
 
-public class ControllerImpl {
+public class ControllerImpl implements Controller {
 
-    private int size;
     private Set<Pair<Integer, Integer>> enabled;
     private Pair<Integer, Integer> currentLocation;
     private Direction currentDirection;
 
-    public ControllerImpl(final int size){
-        this.size = size;
+    public ControllerImpl(){
         this.enabled = new HashSet<>();
         this.currentDirection = Direction.HORIZONTAL;
     }
 
+    @Override
     public boolean contains(final Pair<Integer, Integer> coord){
         return enabled.contains(coord);
     }
 
+    @Override
     public boolean hit(final Pair<Integer, Integer> coord){
         if (currentDirection.condition.apply(currentLocation, coord)){
             inBetween(coord);
@@ -56,6 +55,7 @@ public class ControllerImpl {
         }
     }
 
+    @Override
     public void setPosition(Pair<Integer, Integer> position) {
         this.currentLocation = position;
         enabled.add(position);

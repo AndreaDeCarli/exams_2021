@@ -9,13 +9,13 @@ public class GUI extends JFrame {
     
     private static final long serialVersionUID = -6218820567019985015L;
     private final Map<JButton, Pair<Integer, Integer>> cells = new HashMap<>();
-    private ControllerImpl controller;
+    private Controller controller;
     private boolean first;
     
     public GUI(int size) {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(50*size, 50*size);
-        this.controller = new ControllerImpl(size);
+        this.controller = new ControllerImpl();
         this.first = true;
         
         JPanel panel = new JPanel(new GridLayout(size,size));
